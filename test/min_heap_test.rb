@@ -14,11 +14,12 @@ describe "Heap" do
     value = "Pasta"
 
     # Assert
-    expect(heap.empty?).must_be true
+    expect(heap.empty?).must_equal true
     expect(heap).must_respond_to :add
 
     # Act
     heap.add(key, value)
+    expect(heap.empty?).must_equal false
   end
 
   it "adds nodes in a proper order" do
@@ -78,9 +79,5 @@ describe "Heap" do
 
   # Another assert
   expect(removed).must_equal "Pasta"
-  end
-
-  it "can return true if heap is empty" do
-
   end
 end

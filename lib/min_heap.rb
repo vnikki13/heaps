@@ -52,7 +52,11 @@ class MinHeap
   # Time complexity: ?
   # Space complexity: ?
   def empty?
-    raise NotImplementedError, "Method not implemented yet..."
+    if @store.length == 0
+      return true
+    else
+      return false
+    end
   end
 
   private
