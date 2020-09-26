@@ -14,8 +14,8 @@ class MinHeap
   end
 
   # This method adds a HeapNode instance to the heap
-  # Time Complexity: ?
-  # Space Complexity: ?
+  # Time Complexity: O(log n) n is the number of items
+  # Space Complexity: O(n) creating a new node everytime
   def add(key, value = key)
     @store << HeapNode.new(key, value)
     heap_up(@store.length - 1)
@@ -23,8 +23,8 @@ class MinHeap
 
   # This method removes and returns an element from the heap
   #   maintaining the heap structure
-  # Time Complexity: ?
-  # Space Complexity: ?
+  # Time Complexity: O(log n)
+  # Space Complexity: O(1)
   def remove()
     return nil if @store.empty?
     swap(0, -1)
@@ -49,8 +49,8 @@ class MinHeap
   end
 
   # This method returns true if the heap is empty
-  # Time complexity: ?
-  # Space complexity: ?
+  # Time complexity: O(1) I believe rubies implementation for length is to store the size of the array in a value
+  # Space complexity: O(1)
   def empty?
     if @store.length == 0
       return true
@@ -64,8 +64,8 @@ class MinHeap
   # This helper method takes an index and
   #  moves it up the heap, if it is less than it's parent node.
   #  It could be **very** helpful for the add method.
-  # Time complexity: ?
-  # Space complexity: ?
+  # Time complexity: O(log n)
+  # Space complexity: O(1)
   def heap_up(index)
     parent_i = (index - 1) / 2
     return if index == 0 || @store[parent_i].key < @store[index].key
